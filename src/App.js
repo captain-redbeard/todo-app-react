@@ -3,6 +3,7 @@ import Tasks from './components/Tasks';
 import TaskForm from './components/TaskForm';
 import M from "materialize-css";
 import { formatDate } from './utilities/DateUtil';
+import uuid from 'uuid';
 import "../node_modules/materialize-css/dist/css/materialize.min.css";
 import "../node_modules/material-design-icons/iconfont/material-icons.css";
 import './App.css';
@@ -13,14 +14,14 @@ class App extends React.Component {
     this.state = {
       tasks: [
         {
-          id: 1,
+          id: uuid.v4(),
           title: "Example task one",
           description: "Setup github pages",
           owner: "Redbeard",
           due_date: formatDate(new Date())
         },
         {
-          id: 2,
+          id: uuid.v4(),
           title: "Push todo-app",
           description: "Push changes to github",
           owner: "Redbeard",
@@ -52,11 +53,17 @@ class App extends React.Component {
 
   addTask = (task) => {
     if (this.state.tasks.find(t => t.id === task.id)) {
-      const index = this.state.tasks.findIndex(t => t.id === task.id);
       this.setState({
-        tasks: this.state.tasks.splice(index, 1, task)
+        tasks: this.state.tasks.map((t) => {
+          if (t.id === task.id) {
+            return task;
+          }
+
+          return t;
+        })
       })
     } else {
+      task.id = uuid.v4();
       this.setState({
         tasks: [...this.state.tasks, task]
       });
@@ -81,22 +88,25 @@ class App extends React.Component {
   }
 
   onEditTaskChange = (task) => {
+    let newTask = task;
+
     if (task === null) {
-      task = {
+      newTask = {
         id: null,
         title: "",
         description: "",
         owner: "",
-        due_date: formatDate(new Date()),
-        sequence_number: 1,
+        due_date: formatDate(new Date())
       }
     }
 
     this.setState({
-      editTask: task
+      editTask: newTask
     });
 
-    M.Modal.getInstance(document.querySelector("#addTaskModal")).open();
+    if (task !== null) {
+      M.Modal.getInstance(document.querySelector("#addTaskModal")).open();
+    }
   }
 
   render() {

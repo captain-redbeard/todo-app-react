@@ -15,8 +15,8 @@ class TaskForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.clearEdit();
     this.props.addTask(this.props.editTask);
+    this.clearEdit();
   }
 
   clearEdit() {
