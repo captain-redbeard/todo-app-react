@@ -1,22 +1,3 @@
-.App {
-  text-align: center;
-}
+body{background:#EFEFEF;color:#121212}body a{color:#565656}body a:hover{color:#232323}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.mt-5{margin-top:30px}.card .delete{float:right;color:#f22;-webkit-transition:all 0.2s;transition:all 0.2s}.card .delete:hover{color:#b00}.card .card-title{font-weight:bold;margin-bottom:15px}.card .timestamp{margin-top:15px;margin-bottom:0;color:#989898}.card .card-info{margin-top:15px;margin-bottom:0}.card .task-content{word-break:break-all}.modal-title{margin-bottom:60px}@media (prefers-color-scheme: dark){body{background-color:#111;color:#959595}body a{color:#A0A0A0}body a:hover{color:#d3d3d3}body input,body textarea{color:#E9E9E9}.card,.modal{background-color:#191919}.card .timestamp,.modal .timestamp{color:#606060}::-webkit-input-placeholder{color:#454545;opacity:1}:-ms-input-placeholder{color:#454545;opacity:1}::-ms-input-placeholder{color:#454545;opacity:1}::placeholder{color:#454545;opacity:1}:-ms-input-placeholder{color:#454545}::-ms-input-placeholder{color:#454545}}
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,116 @@
+$background: #EFEFEF;
+$color: #121212;
+$hrefColor: #565656;
+$lightColor: #989898;
+$darkRed: #FF2222;
+
+$darkBackground: #111111;
+$darkColor: #959595;
+$darkHrefColor: #A0A0A0;
+$darkLightColor: #606060;
+$darkModalBackground: #191919;
+$darkInputColor: #E9E9E9;
+$darkPlaceholder: #454545;
+
+body {
+  background: $background;
+  color: $color;
+
+  a {
+    color: $hrefColor;
+
+    &:hover {
+      color: darken($hrefColor, 20%);
+    }
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.mt-5 {
+  margin-top: 30px;
+}
+
+.card {
+  .delete {
+    float: right;
+    color: $darkRed;
+    transition: all 0.2s;
+
+    &:hover {
+      color: darken($darkRed, 20%);
+    }
+  }
+
+  .card-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .timestamp {
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: $lightColor;
+  }
+
+  .card-info {
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+  .task-content {
+    word-break: break-all;
+  }
+}
+
+.modal-title {
+  margin-bottom: 60px;
+}
+
+// Dark theme
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $darkBackground;
+    color: $darkColor;
+
+    a {
+      color: $darkHrefColor;
+
+      &:hover {
+        color: lighten($darkHrefColor, 20%);
+      }
+    }
+  
+    input, textarea {
+      color: $darkInputColor;
+    }
+  }
+
+  .card, .modal {
+    background-color: $darkModalBackground;
+
+    .timestamp {
+      color: $darkLightColor;
+    }
+  }
+
+  ::placeholder {
+    color: $darkPlaceholder;
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    color: $darkPlaceholder;
+  }
+
+  ::-ms-input-placeholder {
+    color: $darkPlaceholder;
+  }
+}
